@@ -4,15 +4,15 @@
 
 # Site
 #标题
-title: 明月清风
+title: funnybug
 #网站副标题
 subtitle: ''
 #网站描述
-description: '分享自己学习中的点点滴滴，记录技术的成长！'
+description: ''
 #网站关键字
 keywords: 明月清风,汤涵,tanghan
 #作者名称
-author: 汤涵
+author: tanghan
 #网站语言
 language: zh-CN
 #时区
@@ -48,7 +48,7 @@ skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
-default_layout: post
+default_layout: _posts
 titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
@@ -108,11 +108,52 @@ ignore:
 # 主题
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape #当前主题名称
+##theme: landscape #当前主题名称
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:tanghan-han/blog.git
+  repository: https://github.com/tanghan-han/blog.git
   branch: master
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  
+# 插件设置
+plugins: hexo-generate-feed
+
+# 字数统计与阅读时长，参考：https://github.com/theme-next/hexo-symbols-count-time
+symbols_count_time:
+  # 文章字数统计
+  symbols: true
+  # 文章阅读时长
+  time: true
+  # 站点总字数统计
+  total_symbols: true
+  # 站点总阅读时长
+  total_time: true
+  # 排除代码字数统计
+  exclude_codeblock: false
+  # 平均字长，默认4
+  awl: 4
+  # 每分钟字数，默认275
+  wpm: 275
+  suffix: 'mins.'
+
+# 搜索配置
+search:
+  # 文件路径
+  path: search.xml
+  # 搜索范围
+  field: post
+  # 是否包含每篇文章的全部内容。如果为false，则生成的结果仅包含标题和其他元信息，而没有主体
+  content: false
+  # 页面内容的形式
+  format: html
+  limit: 10000
