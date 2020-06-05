@@ -1,17 +1,16 @@
 # ---------------------------------------------------------------
-# Theme Core Configuration Settings
-# See: https://theme-next.js.org/docs/theme-settings/
+# next详细配置，参考：https://theme-next.js.org/docs/theme-settings/
 # ---------------------------------------------------------------
 
-# Console reminder if new version released.
+# 如果新版本发布，控制台提醒
 reminder: false
 
-# Allow to cache content generation. Introduced in NexT v6.0.0.
+# 缓存 v6.0.0以上
 cache:
   enable: true
 
-# Remove unnecessary files after hexo generate.
-minify: false
+# hexo general,删除不必要的文件
+minify: true
 
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
@@ -27,13 +26,7 @@ custom_file_path:
   #mixin: source/_data/mixins.styl
   #style: source/_data/styles.styl
 
-
-# ---------------------------------------------------------------
-# Site Information Settings
-# See: https://theme-next.js.org/docs/getting-started/
-# ---------------------------------------------------------------
-
-#网站图标设置
+#网站图标
 favicon:
   small: /images/favicon.ico #16px图标
   medium: /images/favicon.ico #32px图标
@@ -61,7 +54,7 @@ footer:
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
-
+    
   #关闭底部说明
   powered: false
 
@@ -76,21 +69,18 @@ footer:
     # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
     gongan_icon_url:
 
-# Creative Commons 4.0 International License.
-# See: https://creativecommons.org/share-your-work/licensing-types-examples
+# 添加版权说明，参考：https://creativecommons.org/share-your-work/licensing-types-examples
 # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
 # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
 creative_commons:
+  # 协议名
   license: by-nc-sa
   sidebar: false
-  post: false
+  # 启用
+  post: true
   language:
 
-
-# ---------------------------------------------------------------
-# Scheme Settings
-# ---------------------------------------------------------------
 
 # 风格
 #scheme: Muse
@@ -98,13 +88,8 @@ creative_commons:
 #scheme: Pisces
 scheme: Gemini
 
-# Dark Mode
+# 黑暗模式
 darkmode: false
-
-
-# ---------------------------------------------------------------
-# Menu Settings
-# ---------------------------------------------------------------
 
 # 菜单配置
 # Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-senstive.
@@ -132,24 +117,20 @@ menu:
 menu_settings:
  # 启用菜单图标
   icons: true 
-  # 显示数量
-  badges: false
+  # 显示标签、分类、归档数量
+  badges: true
 
-
-# ---------------------------------------------------------------
 # 侧边栏设置
-# See: https://theme-next.js.org/docs/theme-settings/sidebar
-# ---------------------------------------------------------------
-
 sidebar:
-  # Sidebar Position.
-  position: lfet # 侧边栏显示位置
+  # 侧边栏显示位置
+  position: lfet
   #position: right
 
   # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
   # Pisces | Gemini: 240
-  #width: 300
+  # 侧边栏宽度
+  # width: 300
 
   # 侧边栏显示时机
   #  - post    默认行为，在文章页面（拥有目录列表）时显示
@@ -159,22 +140,22 @@ sidebar:
   display: post
 
   # Sidebar padding in pixels.
-  padding: 18
-  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
-  offset: 12
+  padding: 8
+  # 侧边栏偏移 Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
+  offset: 4
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
 
 # 头像
 avatar:
-  # Replace the default image and set the url here.
-  url: /images/avatar.jpg #/images/avatar.gif
-  # If true, the avatar will be dispalyed in circle.
-  rounded: false
-  # If true, the avatar will be rotated with the cursor.
+  # 头像地址
+  url: /images/avatar.jpg
+  # 头像显示圆形
+  rounded: true
+  # 鼠标悬停，旋转
   rotated: false
 
-# Posts / Categories / Tags in sidebar.
+# 侧边栏目录显示日志、分类、标签数量
 site_state: true
 
 # 侧边栏社交连接
@@ -203,24 +184,29 @@ social_icons:
 
 # 友情链接
 links_settings:
-  icon: fa fa-link # 图标
-  title: Links # 标题
-  layout: block #布局，一行一个连接
+  # 图标
+  icon: fa fa-link
+  # 标题
+  title: 友情链接
+  #布局，一行一个连接
+  layout: block
 
 #链接，格式key: value
 links:
+  码云: http://www.baidu.com
 
-# Table of Contents in the Sidebar
+# 侧边栏目录
 # Front-matter variable (unsupport wrap expand_all).
 toc:
+  # 是否启用
   enable: true
-  # Automatically add list number to toc.
+  # 将列表编号添加至目录显示
   number: true
-  # If true, all words will placed on next lines if header width longer then sidebar width.
+  # true:如果帖子标题的宽度大于边栏的宽度，标题换行显示
   wrap: false
-  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+  # true:将帖子中所有级别的标题全部显示在目录中
   expand_all: false
-  # Maximum heading depth of generated toc.
+  # 标题最大深度
   max_depth: 6
 
 # A button to open designated chat widget in sidebar.
@@ -279,8 +265,6 @@ reward_settings:
 
 # 打赏配置
 reward:
-  #wechatpay: /images/wechatpay.png
-  #alipay: /images/alipay.png
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
   # 微信
@@ -346,30 +330,24 @@ calendar:
   singleEvents: true
   maxResults: 250
 
-
-# ---------------------------------------------------------------
-# Misc Theme Settings
-# ---------------------------------------------------------------
-
-# Set the text alignment in posts / pages.
+# 文本对齐
 text_align:
-  # Available values: start | end | left | right | center | justify | justify-all | match-parent
+  # 对齐方式: start | end | left | right | center | justify | justify-all | match-parent
   desktop: justify
   mobile: justify
 
-# Reduce padding / margin indents on devices with narrow width.
+# 减少宽度较窄的设备上的填充/边距缩进
 mobile_layout_economy: false
 
-# Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
+# 使用深黑作为Android Chrome标题面板的颜色
 android_chrome_color: "#222"
 
-# Custom Logo (Do not support scheme Mist)
+# 网站logo，Scheme Mist不支持自定义徽标设置
 custom_logo: #/uploads/custom-logo.jpg
 
 # 代码块设置
 codeblock:
-  # Code Highlight theme
-  # See: https://github.com/highlightjs/highlight.js/tree/master/src/styles
+  # 使用Highlight theme，参考：https://github.com/highlightjs/highlight.js/tree/master/src/styles
   theme:
     light: default
     dark: dark
@@ -377,46 +355,49 @@ codeblock:
   copy_button:
     # 启用代码复制按钮
     enable: true
-    # 显示复制提示结果
+    # 复制结果提示
     show_result: true
-    # Available values: default | flat | mac
-    style:
+    # 复制按钮风格，可选值： default | flat | mac
+    style: default
 
-# 回到顶部配置
+# 回到顶部
 back2top:
+  # 是否启用
   enable: true
-  # 显示在侧边栏
+  # 是否显示在侧边栏
   sidebar: false
-  # 滚动提示浏览进度
+  # 是否滚动提示浏览进度
   scrollpercent: true
 
-# Reading progress bar
+# 文章目录，阅读进度提示
 reading_progress:
+  # 启用状态
   enable: false
-  # Available values: top | bottom
+  # 显示在网站上方还是下方，可选值 top | bottom
   position: top
+  # 进度条颜色
   color: "#37c6c0"
+  # 进度条高度
   height: 3px
 
-# Bookmark Support
+# 书签
 bookmark:
-  enable: false
-  # Customize the color of the bookmark.
+  enable: true
+  # 书签颜色
   color: "#222"
-  # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
-  # If manual, only save it by clicking the bookmark-icon.
+  # 如果 auto ，则在关闭页面或单击书签图标时保存阅读进度。
+  # 如果 manual ，需要点击书签图标保存阅读进度。
   save: auto
 
-# `Follow me on GitHub` banner in the top-right corner.
+# 右上角提示github的banner
 github_banner:
-  enable: false
-  permalink: https://github.com/yourname
+  enable: true
+  # 链接
+  permalink: https://github.com/tanghan-han
+  # 鼠标悬浮提示语
   title: Follow me on GitHub
 
 
-# ---------------------------------------------------------------
-# Font Settings
-# See: https://theme-next.js.org/docs/theme-settings/#Fonts-Customization
 # ---------------------------------------------------------------
 # Find fonts on Google Fonts (https://www.google.com/fonts)
 # All fonts set here will have the following styles:
@@ -427,6 +408,7 @@ github_banner:
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 
+# 字体设置，参考：https://theme-next.js.org/docs/theme-settings/#Fonts-Customization
 font:
   enable: false
 
@@ -530,8 +512,7 @@ math:
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
     copy_tex: false
 
-# Easily enable fast Ajax navigation on your website.
-# Dependencies: https://github.com/next-theme/pjax
+# 启用ajax导航，参考：https://github.com/next-theme/pjax
 pjax: false
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
@@ -627,21 +608,30 @@ changyan:
   appkey:
   #post_meta_order: 0
 
-# Valine
+# Valine评论
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: false
-  appId: # Your leancloud application appid
-  appKey: # Your leancloud application appkey
-  placeholder: Just go go # Comment box placeholder
+  enable: true
+  # leancloud appid
+  appId: LW0MbepHSqjKmoGO5z4Ococr-gzGzoHsz
+  # leancloud appKey
+  appKey: tVDr87MnMJze9JmWNhbEetPO
+  # 评论，占位符
+  placeholder: ヾﾉ≧∀≦)o 吐槽一下！
   avatar: mm # Gravatar style
   meta: [nick, mail, link] # Custom comment header
-  pageSize: 10 # Pagination size
-  language: # Language, available values: en, zh-cn
-  visitor: false # Article reading statistic
-  comment_count: true # If false, comment count will only be displayed in post page, not in home page
-  recordIP: false # Whether to record the commenter IP
-  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
+  # 每页评论数量
+  pageSize: 10
+  # 语言
+  language: zh-cn # Language, available values: en, zh-cn
+  # 文章访问量统计
+  visitor: true
+  # 评论次数显示在文章列表中，false时，只显示在文章中
+  comment_count: true
+  # 是否记录评论者ip
+  recordIP: true
+  # 启用自定义域名后，在此处填写（默认情况下会自动检测到该域名，无需填写）
+  serverURLs: 
   #post_meta_order: 0
 
 # LiveRe comments system
@@ -711,7 +701,7 @@ leancloud_visitors:
   app_id: LW0MbepHSqjKmoGO5z4Ococr-gzGzoHsz # appid
   app_key: tVDr87MnMJze9JmWNhbEetPO # app key
   # Required for apps from CN region
-  server_url: # <your server url>
+  server_url: https://lw0mbeph.lc-cn-n1-shared.com # <your server url>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
@@ -894,9 +884,7 @@ canvas_ribbon:
 #! See: https://theme-next.js.org/docs/advanced-settings
 #! ---------------------------------------------------------------
 
-# Script Vendors. Set a CDN address for the vendor you want to customize.
-# Be aware that you would better use the same version as internal ones to avoid potential problems.
-# Remember to use the https protocol of CDN files when you enable https on your site.
+# 脚本CDN
 vendors:
   # Internal path prefix.
   _internal: lib
@@ -905,10 +893,10 @@ vendors:
   # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
   anime:
 
-  # Internal version: 5.13.0
+  # 内置版本: 5.13.0
   # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css
-  fontawesome:
+  fontawesome: https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css
 
   # MathJax
   # mathjax: //cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -1016,6 +1004,7 @@ css: css
 js: js
 images: images
 use_motion: true #开启动画效果，不过会拖慢显示速度
+canvas_nest: true #开启背景动画效果
 
 # 文章末尾添加“本文结束”标记
 passage_end_tag:
