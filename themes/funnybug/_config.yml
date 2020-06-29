@@ -5,6 +5,16 @@ author: 汤涵
 menu:
   主页: /
   关于: /about
+  归档: /
+  友链: /
+
+# 站点配置
+site:
+  # 网站logo
+  logo: 
+  # 显示文字
+  title: 仲夏的微笑
+  
 
 links:
   github: https://github.com/tanghan-han?tab=repositories
