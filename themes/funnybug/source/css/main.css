@@ -9,14 +9,30 @@ html, body {
     height: 100%;
 }
 
-#content {
+.main {
     height: 100%;
-    padding-left: 300px;
-    background: #f9f7ed;
+    background: rgb(247, 247, 247);
 }
-
-/* #################### 导航栏 #################### */
-nav {
-	width: 70%;
+a {
+	text-decoration: none;
+}
+/* #################### 顶部导航栏 #################### */
+.layui-layout-admin .layui-logo {
+	color: #000 !important;
+}
+.layui-layout-admin .layui-header {
+	background-color: #fff !important;
+}
+.layui-nav .layui-nav-item a {
+	color: rgb(128, 128, 128) !important;
+	text-decoration: none;
+}
+.layui-nav .layui-nav-item a:hover {
+	background-color: #f0f0f0;
+}
+.layui-card {
+	border: 1px solid #ccc;
+	width: 60%;
+	text-aglin:center;
 	margin: 0 auto;
 }

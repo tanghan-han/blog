@@ -1,7 +1,5 @@
-<ul class="nav navbar-nav navbar-right">
+<ul class="layui-nav layui-layout-right">
 	<% for ( menu in theme.menu ) { %>
-		<li class="nav-item active">
-			<a class="nav-link" href="<%- theme.menu[menu] %>"><%- menu %> <span class="sr-only">(current)</span></a>
-		</li>
+		<li class="layui-nav-item"><a href="<%- theme.menu[menu] %>"><%- menu %></a></el-menu-item>
 	<% } %>
 </ul>

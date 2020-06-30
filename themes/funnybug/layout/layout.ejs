@@ -11,31 +11,29 @@
 	<link href="https://cdn.bootcdn.net/ajax/libs/pure/2.0.3/pure-min.css" rel="stylesheet">
 	<!-- bootstrap -->
 	<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+	<!-- layui -->
+	<link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">
-				<img src="<%= theme.site.logo %>" width="30" height="30" alt="" loading="lazy"> <%= theme.site.title %></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-		</div>
-		<nav id="bs-navbar" class="collapse navbar-collapse">
-			<!-- 引入导航 -->
-			<%- include('nav.ejs') %>
-		</nav>
-	</nav>
-	<div id="main">
-		<!-- 引入正文 -->
-		<div id="content">
-			<div id="article">
-				<%- body %>
-			</div>
-		</div>
-	</div>
 	<!-- 引入cdn相关 -->
 	<%- include('script.ejs') %>
 	<%- js('js/main.js') %>
+	<%- js('js/nav.js') %>
+	<header class="layui-layout layui-layout-admin layui-main">
+		<div class="layui-header header">
+			<div class="layui-logo">
+				<% if (theme.site.logo) { %>
+					<img src="<%= theme.site.logo %>"/>
+				<% } %>
+				<%= theme.site.title %>
+			</div>
+			<!-- 引入导航 -->
+			<%- include('nav.ejs') %>
+		</div>
+	</header>
+	<!-- 文章列表 -->
+	<div class="main layui-layout layui-layout-admin">
+		<%- body %>
+	</div>
 </body>
 </html>
