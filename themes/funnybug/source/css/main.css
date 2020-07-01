@@ -7,16 +7,24 @@
 
 html, body {
     height: 100%;
+	width: 100%;
+	background-color: rgb(247, 247, 247) !important;
 }
-
-.main {
-    height: 100%;
-    background: rgb(247, 247, 247);
+#intervalBox {
+	height: 40px;
 }
 a {
 	text-decoration: none;
 }
 /* #################### 顶部导航栏 #################### */
+header {
+	width: 100%;
+	background-color: #fff !important;
+}
+.header {
+	width: 70%;
+	margin: 0 auto;
+}
 .layui-layout-admin .layui-logo {
 	color: #000 !important;
 }
@@ -30,9 +38,20 @@ a {
 .layui-nav .layui-nav-item a:hover {
 	background-color: #f0f0f0;
 }
+
+/* #################### 卡片 #################### */
 .layui-card {
 	border: 1px solid #ccc;
-	width: 60%;
-	text-aglin:center;
+	width: 65%;
 	margin: 0 auto;
+	border-radius: 7px !important;
+	margin-bottom: 20px !important;
+}
+.layui-card-header {
+	font-family: "微软雅黑";
+	font-size: 24px !important;
+}
+.description {
+	font-size: 12px;
+	color: rgb(147, 147, 147);
 }

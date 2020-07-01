@@ -4,9 +4,10 @@ author: 汤涵
 # Header
 menu:
   主页: /
-  关于: /about
+  分类: /
   归档: /
   友链: /
+  关于: /about
 
 # 站点配置
 site:

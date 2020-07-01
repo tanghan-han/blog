@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- 引入配置文件 -->
     <%- css('css/main.css') %>
-    <!-- 字体图片库 -->
-    <%- css('lib/font-awesome/css/font-awesome.min.css') %>
+    <!-- fontawesome -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://cdn.bootcdn.net/ajax/libs/pure/2.0.3/pure-min.css" rel="stylesheet">
 	<!-- bootstrap -->
 	<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
 	<%- include('script.ejs') %>
 	<%- js('js/main.js') %>
 	<%- js('js/nav.js') %>
-	<header class="layui-layout layui-layout-admin layui-main">
+	<header class="layui-layout layui-layout-admin">
 		<div class="layui-header header">
 			<div class="layui-logo">
 				<% if (theme.site.logo) { %>
@@ -31,9 +31,10 @@
 			<%- include('nav.ejs') %>
 		</div>
 	</header>
+	<div id="intervalBox"></div>
 	<!-- 文章列表 -->
-	<div class="main layui-layout layui-layout-admin">
+	<main class="main layui-layout layui-layout-admin" id="content">
 		<%- body %>
-	</div>
+	</main>
 </body>
 </html>
