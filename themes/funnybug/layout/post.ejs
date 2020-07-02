@@ -1,4 +1,3 @@
 这里是 layout.ejs
-<% for ( article in site.posts ) { %>
-	<h1><%= article.title %></h1>
-<% } %>
+<%- page.content %>
+<% console.log(page.tags.length) %>

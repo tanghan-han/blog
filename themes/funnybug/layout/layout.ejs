@@ -17,8 +17,10 @@
 <body>
 	<!-- 引入cdn相关 -->
 	<%- include('script.ejs') %>
+	<%- include('variable.ejs') %>
 	<%- js('js/main.js') %>
 	<%- js('js/nav.js') %>
+	<%- js('js/page.js') %>
 	<header class="layui-layout layui-layout-admin">
 		<div class="layui-header header">
 			<div class="layui-logo">
@@ -31,10 +33,27 @@
 			<%- include('nav.ejs') %>
 		</div>
 	</header>
-	<div id="intervalBox"></div>
 	<!-- 文章列表 -->
 	<main class="main layui-layout layui-layout-admin" id="content">
 		<%- body %>
 	</main>
+	<nav id="page">
+		
+	</nav>
+	<footer>
+		<nav class="pagination">
+			<%-
+				paginator({
+					prev_text: '<i class="fa fa-angle-left" aria-label="' + __('accessibility.prev_page') + '"></i>',
+					next_text: '<i class="fa fa-angle-right" aria-label="' + __('accessibility.next_page') + '"></i>',
+					mid_size : 1,
+					escape   : false
+				})	
+			%>
+		</nav>
+	</footer>
+	<div>
+		<a href="javascript:;" id="backTop" title="回到顶部" class="layui-circle"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+	</div>
 </body>
 </html>

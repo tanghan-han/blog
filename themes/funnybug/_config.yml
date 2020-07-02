@@ -15,7 +15,11 @@ site:
   logo: 
   # 显示文字
   title: 仲夏的微笑
-  
+
+# 标签配置
+tag:
+  # 标签icon，如果不配置默认使用#
+  icon: fa fa-tag
 
 links:
   github: https://github.com/tanghan-han?tab=repositories
