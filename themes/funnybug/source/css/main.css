@@ -38,6 +38,9 @@ header {
 .layui-nav .layui-nav-item a:hover {
 	background-color: #f0f0f0;
 }
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
+	/* background-color: rgb(220, 220, 220) !important;*/
+}
 /* #################### 主体 #################### */
 main {
 	margin-top: 85px;
