@@ -18,11 +18,21 @@ site:
 
 # 标签配置
 tag:
-  # 标签icon，如果不配置默认使用#
-  icon: fa fa-tag
+  # 标签icon，如果不配置默认使用fa fa-tag
+  icon: 
 
 links:
   github: https://github.com/tanghan-han?tab=repositories
 
 cdn:
   jquery: 
+
+# hexo-symbols-count-time插件配置
+# 详情查看: https://github.com/theme-next/hexo-symbols-count-time
+symbols_count_time:
+  # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）
+  item_text_post: true
+  # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）
+  item_text_total: true
+  # 时间后缀，默认'mins.'
+  suffix: '分钟'

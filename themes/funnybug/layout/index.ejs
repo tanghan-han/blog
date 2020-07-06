@@ -6,28 +6,41 @@
 				<span class="layui-breadcrumb" lay-separator="|">
 					<a><cite><i class="fa fa-calendar-o" title="创建时间"></i> <%- date(post.date) %> <%- time(post.date) %></cite></a>
 					<% if (post.categories.length) { %>
-						<a><cite><i class="fa fa-folder-o" title="分类"></i> 分类：<%- console.log(post.categories) %></cite></a>
+						<a><cite><i class="fa fa-folder-o" title="分类"></i> 分类：<% post.categories.data.forEach(function(categorie) { %> <%- categorie.name %> <% }) %></cite></a>
 					<% } %>
 					<a><cite><i class="fa fa-eye" title="阅读次数"></i> 阅读次数：123</cite></a>
-					<a><cite><i class="fa fa-file-word-o" title="本文字数"></i> 本文字数：123</cite></a>
-					<a><cite><i class="fa fa-clock-o" title="阅读时长"></i> 阅读时长 ≈ 1分钟</cite></a>
+					<a><cite><i class="fa fa-file-word-o" title="本文字数"></i> 本文字数：<%- symbolsCount(post) %></cite></a>
+					<a><cite><i class="fa fa-clock-o" title="阅读时长"></i> 阅读时长 ≈ <%- symbolsTime(post, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, theme.symbols_count_time.suffix) %></cite></a>
 				</span>
 			</div>
 			<div>
 				<%- post.excerpt %>
 			</div>
-			<div class="codes">
-				<% post.tags.data.forEach((tag)=>{ %>
-					<span class="layui-badge layui-bg-gray">
-						<% if (theme.tag.icon) { %>
-							<i class="<%- theme.tag.icon %>" aria-hidden="true"></i>
-						<% } else { %>
-							<i class="fa fa-hashtag" aria-hidden="true"></i>
-						<% } %>
-						<%- tag.name %>
+			<% 
+				let intervalDate = post.updated.diff(post.date, 'days');
+				if (intervalDate >= 1 || post.tags.length) {
+			%>
+				<hr>
+				<div class="article-footer layui-clear">
+					<% if (intervalDate >= 1) { %>
+						<span>
+							更新于：<%- post.updated.format('YYYY-MM-DD HH:mm:ss') %>
+						</span>
+					<% } %>
+					<span>
+						<% post.tags.data.forEach((tag)=>{ %>
+							<span class="layui-badge layui-bg-gray">
+								<% if (theme.tag.icon) { %>
+									<i class="<%- theme.tag.icon %>" aria-hidden="true"></i>
+								<% } else { %>
+									<i class="fa fa-tag" aria-hidden="true"></i>
+								<% } %>
+								<%- tag.name %>
+							</span>
+						<% }) %>
 					</span>
-				<% }) %>
-			</div>
+				</div>
+			<% } %>
 		</div>
 	</article>
 <% }); %>

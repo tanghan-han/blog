@@ -66,10 +66,16 @@ article:hover {
 	font-size: 12px;
 	color: rgb(147, 147, 147);
 }
-/* #################### 标签 #################### */
-.codes {
-	text-align: right;
+.article-footer {
+	width: 100%;
 	font-family: "微软雅黑";
+	color: #666;
+}
+.article-footer>span:first-child {
+	
+}
+.article-footer>span:last-child {
+	float: right;
 }
 /* #################### 回到顶部 #################### */
 #backTop {
