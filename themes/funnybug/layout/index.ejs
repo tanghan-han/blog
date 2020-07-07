@@ -1,19 +1,16 @@
-<% site.posts.sort('date', theme.index_generator.order_by.date).limit(theme.index_generator.per_page).each(function(post) { %>
+<% page.posts.sort('date', theme.index_generator.order_by.date).limit(theme.index_generator.per_page).each(function(post) { %>
 	<article class="layui-card" path="<%= url_for(post.path) %>">
 		<div class="layui-card-header"><%- post.title %></div>
 		<div class="layui-card-body">
 			<div class="description">
 				<span class="layui-breadcrumb" lay-separator="|">
 					<a><cite><i class="fa fa-calendar-o" title="创建时间"></i> <%- date(post.date) %> <%- time(post.date) %></cite></a>
-					<% if (post.categories.length) { %>
-						<a><cite><i class="fa fa-folder-o" title="分类"></i> 分类：<% post.categories.data.forEach(function(categorie) { %> <%- categorie.name %> <% }) %></cite></a>
-					<% } %>
 					<a><cite><i class="fa fa-eye" title="阅读次数"></i> 阅读次数：123</cite></a>
 					<a><cite><i class="fa fa-file-word-o" title="本文字数"></i> 本文字数：<%- symbolsCount(post) %></cite></a>
 					<a><cite><i class="fa fa-clock-o" title="阅读时长"></i> 阅读时长 ≈ <%- symbolsTime(post, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, theme.symbols_count_time.suffix) %></cite></a>
 				</span>
 			</div>
-			<div>
+			<div class="excerpt">
 				<%- post.excerpt %>
 			</div>
 			<% 
