@@ -10,9 +10,13 @@ html {
 html, body {
 	width: 100%;
 	background-color: rgb(247, 247, 247) !important;
+	font-family: '微软雅黑', 'inherit';
 }
 a {
 	text-decoration: none;
+}
+a:hover {
+	text-decoration: none !important;
 }
 /* #################### 顶部导航栏 #################### */
 header {
@@ -21,6 +25,7 @@ header {
 	position: fixed;
 	top: 0px;
 	z-index: 999;
+	height: 60px;
 }
 .header {
 	width: 70%;
@@ -39,12 +44,17 @@ header {
 .layui-nav .layui-nav-item a:hover {
 	background-color: #f0f0f0;
 }
+.header a:hover {
+	color: #333;
+}
+/* 隐藏导航鼠标悬浮绿色条 */
 .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
-	/* background-color: rgb(220, 220, 220) !important;*/
+	opacity: 0 !important;
 }
 /* #################### 主体 #################### */
 main {
 	margin-top: 85px;
+	min-height: calc(100vh - 170px);
 }
 /* #################### 文章卡片 #################### */
 article:hover {
@@ -58,7 +68,6 @@ article:hover {
 	margin-bottom: 20px !important;
 }
 .layui-card-header {
-	font-family: "微软雅黑";
 	font-size: 24px !important;
 	height: 2em !important;
 	margin-top: 5px !important;
@@ -69,31 +78,54 @@ article:hover {
 }
 .article-footer {
 	width: 100%;
-	font-family: "微软雅黑";
 	color: #666;
 }
 .article-footer>span:last-child {
 	float: right;
 }
 .excerpt {
-	font-family: "微软雅黑";
 	font-size: 16px;
 	line-height: 2em;
 	color: rgb(96, 96, 96);
 }
+/* #################### 标签 #################### */
+.tag {
+	font-family: '微软雅黑';
+}
 /* #################### 分页 #################### */
 #pagination {
-	height: 40px;
 	text-align: center;
 	width: 100%;
+	margin-top: 25px;
 }
-.page-number, .prev, .next, .space {
+#pagination a, #pagination span {
 	background-color: #fff;
-	width: 40px;
-	height: 40px;
-	display: block;
-	float: left;
-	margin: 0 auto;
+	padding: 10px 15px;
+	margin: 0 5px;
+	line-height: 35px;
+	border-radius: 5px;
+}
+.current {
+	background-color: #007bff !important;
+	color: #fff;
+}
+.page-number:hover {
+	background-color: #007bff !important;
+	color: #fff;
+}
+.next:hover, .prev:hover {
+	color: #007bff;
+}
+/* #################### 页脚 #################### */
+.footer {
+	height: 80px;
+	text-align: center;
+}
+.footer div a:hover {
+	color: #999 !important;
+}
+.footer div {
+	padding-top: 20px;
 }
 /* #################### 回到顶部 #################### */
 #backTop {

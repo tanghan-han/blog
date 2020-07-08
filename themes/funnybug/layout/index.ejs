@@ -1,4 +1,4 @@
-<% page.posts.sort('date', theme.index_generator.order_by.date).limit(theme.index_generator.per_page).each(function(post) { %>
+<% page.posts.sort(theme.index_generator.order_by).limit(theme.index_generator.per_page).each(function(post) { %>
 	<article class="layui-card" path="<%= url_for(post.path) %>">
 		<div class="layui-card-header"><%- post.title %></div>
 		<div class="layui-card-body">
@@ -24,7 +24,7 @@
 							更新于：<%- post.updated.format('YYYY-MM-DD HH:mm:ss') %>
 						</span>
 					<% } %>
-					<span>
+					<span class="tag">
 						<% post.tags.data.forEach((tag)=>{ %>
 							<span class="layui-badge layui-bg-gray">
 								<% if (theme.tag.icon) { %>

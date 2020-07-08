@@ -8,9 +8,6 @@
     <%- css('css/main.css') %>
     <!-- fontawesome -->
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://cdn.bootcdn.net/ajax/libs/pure/2.0.3/pure-min.css" rel="stylesheet">
-	<!-- bootstrap -->
-	<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
 	<!-- layui -->
 	<link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
 </head>
@@ -20,14 +17,13 @@
 	<%- include('variable.ejs') %>
 	<%- js('js/main.js') %>
 	<%- js('js/nav.js') %>
-	<%- js('js/page.js') %>
 	<header class="layui-layout layui-layout-admin">
 		<div class="layui-header header">
 			<div class="layui-logo">
 				<% if (theme.site.logo) { %>
 					<img src="<%= theme.site.logo %>"/>
 				<% } %>
-				<%= theme.site.title %>
+				<a href="/"><%= theme.title %></a>
 			</div>
 			<!-- 引入导航 -->
 			<%- include('nav.ejs') %>
@@ -37,17 +33,40 @@
 	<main class="main layui-layout layui-layout-admin" id="content">
 		<%- body %>
 		<nav id="pagination">
-			<%-
-				paginator({
-					prev_text: '<i class="fa fa-angle-left"></i>',
-					next_text: '<i class="fa fa-angle-right"></i>',
-					space: '...',
-					mid_size : 1,
-					escape   : false
-				})	
-			%>
+				<%-
+					paginator({
+						prev_text: '上一页',
+						next_text: '下一页',
+						space: '...',
+						mid_size : 1,
+						escape   : false
+					})	
+				%>
 		</nav>
 	</main>
+	<footer class="footer">
+		<div class="layui-breadcrumb" lay-separator="|">
+			<a>© 
+				<%
+					let now = moment().year();
+					let since = moment(theme.footer.since);
+					if (since.isSame(now)) {
+				%>
+					<%- since %>
+				<% } else if (since.isBefore(now)) { %>
+					<%- since %> - <%- now %>
+				<% } %>
+				<i class="fa fa-heartbeat"></i>
+				<%- theme.author %></a>
+			<a><i class="fa fa-area-chart" title="站点总字数"></i> 站点总字数 ≈ <%- symbolsCountTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, theme.symbols_count_time.suffix) %></a>
+			<a><i class="fa fa-coffee"></i> 站点阅读时长 ≈ <%- symbolsTimeTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, theme.symbols_count_time.suffix) %></a>
+			<a>搞笑</a>
+			<a>视频</a>
+			<a>游戏</a>
+			<a>综艺</a>
+		</div>
+	</footer>
+	<input type="hidden" id="reduction"/>
 	<div>
 		<a href="javascript:;" id="backTop" title="回到顶部" class="layui-circle"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 	</div>

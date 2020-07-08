@@ -4,7 +4,7 @@
 
 # Site
 #标题
-title: funnybug
+title: 仲夏的微笑
 #网站副标题
 subtitle: ''
 #网站描述
@@ -74,12 +74,9 @@ highlight:
 index_generator:
   path: ''
   # 每页显示数量
-  per_page: 2
-  order_by: 
-    # top值排序
-    top: -1
-    # 日期倒序
-    date: -1
+  per_page: 8
+  # 日期倒序
+  order_by: -date
 
 # Category & Tag
 default_category: uncategorized
@@ -149,7 +146,8 @@ symbols_count_time:
   awl: 4
   # 每分钟字数，默认275
   wpm: 275
-  suffix: 'mins.'
+  # 时间单位后缀
+  suffix: '分钟'
 
 # 搜索配置
 search:
