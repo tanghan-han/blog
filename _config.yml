@@ -74,7 +74,7 @@ highlight:
 index_generator:
   path: ''
   # 每页显示数量
-  per_page: 8
+  per_page: 2
   # 日期倒序
   order_by: -date
 

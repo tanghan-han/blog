@@ -26,3 +26,4 @@ $(function() {
 		window.location.href = path;
 	});
 });
+

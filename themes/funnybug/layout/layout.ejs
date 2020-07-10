@@ -58,12 +58,8 @@
 				<% } %>
 				<i class="fa fa-heartbeat"></i>
 				<%- theme.author %></a>
-			<a><i class="fa fa-area-chart" title="站点总字数"></i> 站点总字数 ≈ <%- symbolsCountTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, theme.symbols_count_time.suffix) %></a>
-			<a><i class="fa fa-coffee"></i> 站点阅读时长 ≈ <%- symbolsTimeTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, theme.symbols_count_time.suffix) %></a>
-			<a>搞笑</a>
-			<a>视频</a>
-			<a>游戏</a>
-			<a>综艺</a>
+			<a><i class="fa fa-area-chart" title="站点字数"></i> 站点字数 ≈ <%- symbolsCountTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, theme.symbols_count_time.suffix) %></a>
+			<a><i class="fa fa-coffee" title="站点阅读时长"></i> 站点阅读时长 ≈ <%- symbolsTimeTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, theme.symbols_count_time.suffix) %></a>
 		</div>
 	</footer>
 	<input type="hidden" id="reduction"/>
